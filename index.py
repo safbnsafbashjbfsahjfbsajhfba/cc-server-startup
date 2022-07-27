@@ -1,3 +1,4 @@
+from secrets import token_urlsafe
 from turtle import end_fill
 import discord
 import os
@@ -12,7 +13,7 @@ aternos = Client.from_credentials('super256yes', 'super256!')
 
 # Returns AternosServer list
 servs = aternos.list_servers()
-
+toker = input("Enter your bot token: ")
 # Get the first server by the 0 index
 myserv = servs[0]
 status = 'Status: {}'.format(myserv.status)
@@ -43,5 +44,5 @@ class MyClient(discord.Client):
             await message.channel.send(status)
             
 client = MyClient()
-client.run('MTAwMTIxMTU5ODQ4NjExNDM2NQ.GHMDPw.RMrc5neMj1ACgXvRUPAjn2iuQhXXkdG8vDes-g')
+client.run(toker)
 
